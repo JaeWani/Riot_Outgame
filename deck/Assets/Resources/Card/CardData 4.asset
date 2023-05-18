@@ -15,3 +15,5 @@ MonoBehaviour:
   CardName: "\uBC15\uC8FC\uC740"
   CardID: 4
   CardLV: 1
+  CardSprite: {fileID: 21300000, guid: 1d529774e81fe024b81a4ff98e7a46b5, type: 3}
+  CardRarity: 1

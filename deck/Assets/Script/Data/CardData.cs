@@ -7,4 +7,14 @@ public class CardData : ScriptableObject
     public string CardName;
     public int CardID;
     public int CardLV;
+    public Sprite CardSprite;
+    public Rarity CardRarity;
+}
+
+public enum Rarity
+{
+    Nomal,
+    Rare,
+    Hero,
+    Legend
 }
