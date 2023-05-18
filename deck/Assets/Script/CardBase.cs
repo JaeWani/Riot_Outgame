@@ -16,10 +16,6 @@ public class CardBase : MonoBehaviour
     public Rarity rarity;
     void Start()
     {
-        CardSprite.sprite = Sprite;
-        CardName.text = Name;
-        CardRarity.text  = ReturnRarity(rarity);
-        CardRarity.color = color;
     }
     string ReturnRarity(Rarity rarity)
     {
@@ -44,5 +40,12 @@ public class CardBase : MonoBehaviour
             break;
         }
         return returnValue;
+    }
+    public void SetCard()
+    {
+        CardSprite.sprite = Sprite;
+        CardName.text = Name;
+        CardRarity.text  = ReturnRarity(rarity);
+        CardRarity.color = color;
     }
 }

@@ -24,6 +24,8 @@ public class GachaEditor : Editor
         if(GUILayout.Button("캐릭 뽑기 (기본 상자)")) (target as Gacha).RandomCard((target as Gacha).RarityRandom(nomal));
         if(GUILayout.Button("캐릭 뽑기 (좋은 상자)")) (target as Gacha).RandomCard((target as Gacha).RarityRandom(Good));
 
+        if(GUILayout.Button("다시 뽑기")) (target as Gacha).ReGacha();
+
         base.OnInspectorGUI();
         serializedObject.ApplyModifiedProperties();
     }

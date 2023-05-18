@@ -27,15 +27,47 @@ public class Gacha : MonoBehaviour
     void Awake()
     {
         Data = UserData.instance;
-        foreach(var item in Card)
+        ReGacha();
+    }
+    public void ReGacha()
+    {
+        StartCoroutine(Gacha());
+        IEnumerator Gacha()
         {
-            CardData Data = RandomCard(RarityRandom(GoodChest));
-            item.Name = Data.CardName;
-            item.Sprite = Data.CardSprite;
-            item.rarity = Data.CardRarity;
+            yield return StartCoroutine(GachaMotion(1000));
+            foreach(var item in Card)
+            {
+                CardData Data = RandomCard(RarityRandom(GoodChest));
+                item.Name = Data.CardName;
+                item.Sprite = Data.CardSprite;
+                item.rarity = Data.CardRarity;
+                item.SetCard();
+            }
         }
     }
-
+    IEnumerator GachaMotion(float speed)
+    {
+        float RoatateSpeed = 0;
+        for(int i = 0; i < 1; i++)
+        {
+            for(float y = 0; y <= 360; y += Time.deltaTime * RoatateSpeed)
+            {
+            yield return new WaitForSeconds(0.01f);
+            if(RoatateSpeed < speed)
+            RoatateSpeed += 1;
+            foreach(var item in Card)
+            {
+                RectTransform tr = item.GetComponent<RectTransform>();
+                tr.Rotate(Vector3.up * y);
+            }
+            }
+        }
+        foreach(var item in Card)
+        {
+            RectTransform tr = item.GetComponent<RectTransform>();
+            tr.rotation = Quaternion.Euler(0,0,0);
+        }
+    }
     /// <summary>
     /// 카드 추가해주는 함수입니다. id = 카드 아이디 / Num = 갯수
     /// </summary>
