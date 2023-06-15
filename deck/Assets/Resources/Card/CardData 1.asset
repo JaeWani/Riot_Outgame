@@ -15,5 +15,7 @@ MonoBehaviour:
   CardName: "\uAE40\uC6C5\uC12D"
   CardID: 1
   CardLV: 3
+  CardAmount: 0
   CardSprite: {fileID: 21300000, guid: d756e6a86f4d42d4b9609176bd5c932d, type: 3}
   CardRarity: 2
+  RarityColor: {r: 1, g: 0, b: 1, a: 1}

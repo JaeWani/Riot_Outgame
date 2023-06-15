@@ -10,18 +10,21 @@ public class MainUI : MonoBehaviour
     [SerializeField] Vector3 DeckScreenPos;
     [SerializeField] Vector3 MainScreenPos;
     [SerializeField] Vector3 ShopScreenPos;
+    [SerializeField] Vector3 CardManagementScreenPos;
     [SerializeField] Vector3 CurrentScreen;
 
     [Header ("Button")]
     [SerializeField] Button MainScreenBtn;
     [SerializeField] Button DeckScreenBtn;
     [SerializeField] Button ShopScreenBtn;
+    [SerializeField] Button CardManagementBtn;
 
     private void Awake()
     {
         MainScreenBtn.onClick.AddListener(() => SetScreen(MainScreenPos));
         DeckScreenBtn.onClick.AddListener(() => SetScreen(DeckScreenPos));
         ShopScreenBtn.onClick.AddListener(() => SetScreen(ShopScreenPos));
+        CardManagementBtn.onClick.AddListener(() => SetScreen(CardManagementScreenPos));
     }
     private void Start() 
     {
